@@ -104,7 +104,7 @@ void del()      //deleting an array element
                 a[i]=a[i+1];
         }
         n=n-1;
-        cout<<"\nThe deleted element is =%d"<<val;
+        cout<<"\nThe deleted element is"<<val+1;
 }//end of delete()
 void search()   //searching an array element
 {
@@ -114,7 +114,7 @@ void search()   //searching an array element
         {
                 if(a[i]==key)
                 {
-                        cout<<"\nThe element is present at position %d"<<i;
+                        cout<<"\nThe element is present at position "<<i+1;
                         break;
                 }
         }
