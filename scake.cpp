@@ -1,7 +1,6 @@
-#include <iostream>
-#include <conio.h>
+#include<iostream>
+#include<conio.h>
 #include<stdlib.h>
-using namespace std;
 
 void run();
 void printMap();
@@ -15,8 +14,8 @@ void generateFood();
 char getMapValue(int value);
 
 // Map dimensions
+const int mapwidth = 20;
 const int mapheight = 20;
-const int mapwidth = 30;
 
 const int size = mapwidth * mapheight;
 
@@ -177,15 +176,15 @@ void initMap()
     map[headxpos + headypos * mapwidth] = 1;
 
     // Places top and bottom walls 
-    for (int x = 0; x < mapheight; ++x) {
+    for (int x = 0; x < mapwidth; ++x) {
         map[x] = -1;
-        map[x + (mapwidth - 1) * mapheight] = -1;
+        map[x + (mapheight - 1) * mapwidth] = -1;
     }
 
     // Places left and right walls
-    for (int y = 0; y < mapwidth; y++) {
-        map[0 + y * mapheight] = -1;
-        map[(mapheight - 1) + y * mapheight] = -1;
+    for (int y = 0; y < mapheight; y++) {
+        map[0 + y * mapwidth] = -1;
+        map[(mapwidth - 1) + y * mapwidth] = -1;
     }
 
     // Generates first food
